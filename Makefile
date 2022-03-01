@@ -2,14 +2,14 @@
 
 .PHONY: all install clean
 
-all: X11-demo
+all: x11-vnc-demo
 
 install: all
 
 clean:
 	rm -f window.o main.o input.o
 
-X11-demo : window.o main.o input.o  
+x11-vnc-demo : window.o main.o input.o  
 	gcc -o $@ $^ -lvncserver -lxcb -lxcb-xtest -lxcb-keysyms 
 
 window.o: window.c window.h

@@ -1,7 +1,7 @@
 {
     "targets": [
         {
-            "name": "X11-demo",
+            "name": "x11-vnc-demo",
             "type": "executable",
             "cflags": "-O3",
             "libs": "-lvncserver -lxcb -lxcb-xtest -lxcb-keysyms",
