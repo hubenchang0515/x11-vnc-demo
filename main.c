@@ -61,14 +61,14 @@ int main(int argc, char* argv[])
     rfbScreen->kbdAddEvent = keyCallback;
     rfbScreen->ptrAddEvent = mouseCallback;
     rfbInitServer(rfbScreen);
+    rfbRunEventLoop(rfbScreen, 1000000/60, TRUE);
     
     while (TRUE)
     {
         // 没有客户端连接，不进行处理仅空转
         while (rfbScreen->clientHead == NULL)
-			rfbProcessEvents(rfbScreen, 1000000 / 144);
 
-        rfbProcessEvents(rfbScreen, 1000000 / 144);
+        // 更新图像
         get_window_image(conn, root, frameBuffer);
         rfbMarkRectAsModified(rfbScreen, 0, 0, (int)width, (int)height);
     }
