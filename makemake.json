@@ -1,0 +1,15 @@
+{
+    "targets": [
+        {
+            "name": "X11-demo",
+            "type": "executable",
+            "cflags": "-O3",
+            "libs": "-lvncserver -lxcb -lxcb-xtest -lxcb-keysyms",
+            "sources": [
+                "window.c",
+                "main.c",
+                "input.c"
+            ]
+        }
+    ]
+}
